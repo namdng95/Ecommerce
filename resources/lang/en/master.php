@@ -1,6 +1,32 @@
 <?php
 
 return [
+    'user' => [
+        'info' => 'User Information',
+        'id' => 'Id',
+        'username' => 'Username',
+        'email' => 'Email',
+        'password' => 'Password',
+        'fullname' => 'Full Name',
+        'birthday' => 'Birthday',
+        'phone' => 'Phone Number',
+        'avatar' => 'Avatar',
+        'gender' => 'Gender',
+        'role' => 'Role',
+        'facebook' => 'Facebook',
+        'status' => 'Status',
+        'create_at' => 'Create at',
+        'update_at' => 'Update at',
+        'level' => [
+            'admin' => 'Administrator',
+            'user' => 'Customer'
+        ],
+        'edit' => [
+            'name' => 'Edit',
+            'title' => 'Edit User Information',
+            'update' => 'Update',
+        ],
+    ],
     'label' => [
         'username' => 'Username',
         'email' => 'Email',
@@ -19,6 +45,8 @@ return [
         'success_login' => 'Login Successfully!',
         'error_signup' => 'Create Account Error! x.X',
         'success_signup' => 'Create Account Successfully!',
+        'error' => 'Error!!!',
+        'success' => 'Successfully!',
     ],
     'gender' => [
         'male' => 'Male',

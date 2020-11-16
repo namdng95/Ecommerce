@@ -1,6 +1,32 @@
 <?php
 
 return [
+    'user' => [
+        'info' => 'Thông tin người dùng',
+        'id' => 'Id',
+        'username' => 'Tên người dùng',
+        'email' => 'Email',
+        'password' => 'Mật khẩu',
+        'fullname' => 'Tên đầy đủ',
+        'birthday' => 'Ngày sinh',
+        'phone' => 'Số điện thoại',
+        'avatar' => 'Ảnh đại diện',
+        'gender' => 'Giới tính',
+        'role' => 'Chức vụ',
+        'facebook' => 'Facebook',
+        'status' => 'Trạng thái',
+        'create_at' => 'Tạo vào lúc',
+        'update_at' => 'Chỉnh sửa lúc',
+        'level' => [
+            'admin' => 'Quản trị viên',
+            'user' => 'Khách hàng'
+        ],
+        'edit' => [
+            'name' => 'Chỉnh sửa',
+            'title' => 'Chỉnh sửa thông tin người dùng',
+            'update' => 'Cập nhật',
+        ],
+    ],
     'label' => [
         'username' => 'Tên người dùng',
         'email' => 'Email',
