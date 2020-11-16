@@ -2,6 +2,17 @@
 
 return [
 
+    'admin_role' => 1,
+    'user_role' => 0,
+
+    // status
+    'enable' => 1,
+    'disable' => 0,
+
+    // active
+    'actived' => 1,
+    'deactived' => 0,
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

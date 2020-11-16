@@ -71,7 +71,11 @@
                             <ul class="nav navbar-nav">
                                 <li><a href=""><i class="fa fa-crosshairs"></i>@lang('master.checkout')</a></li>
                                 <li><a href=""><i class="fa fa-shopping-cart"></i>@lang('master.cart')</a></li>
-                                <li><a href=""><i class="fa fa-lock"></i>@lang('master.logout')</a></li>
+                            @if(Auth::check())
+                                <li><a href="{{ route('logout') }}"><i class="fa fa-lock"></i>@lang('master.logout')</a></li>
+                            @else
+                                <li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>@lang('master.login')</a></li>
+                            @endif
                                 <li><a href=""><i class="fa fa-user"></i>@lang('master.profile')</a></li>
                             </ul>
                         </div>

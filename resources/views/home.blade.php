@@ -5,6 +5,9 @@
 <section>
     <div class="container">
         <div class="row">
+            
+            @include('common.success_login')
+
             {{-- include category blade --}}
             @include('include.category')
 

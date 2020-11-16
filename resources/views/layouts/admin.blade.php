@@ -140,7 +140,11 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span><!-- name here -->
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                @if(isset(Auth::user()->fullname)) 
+                                    {{ Auth::user()->fullname }}
+                                @endif
+                            </span><!-- name here -->
                                 <img class="img-profile rounded-circle"
                                     src="images/img/undraw_profile.svg">
                             </a>
@@ -156,10 +160,17 @@
                                     @lang('master.setting')
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="" data-toggle="modal" data-target="logoutModal">
+                            @if(Auth::check())
+                                <a class="dropdown-item" href="{{ route('admin.logout') }}">
                                     <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     @lang('master.logout')
                                 </a>
+                            @else
+                                <a class="dropdown-item" href="{{ route('admin.login') }}">
+                                    <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    @lang('master.login')
+                                </a>
+                            @endif
                             </div>
                         </li>
 
@@ -181,6 +192,9 @@
                     </div>
                 </nav>
                 <!-- End of Topbar -->
+
+                @include('common.success_login')
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     
@@ -207,25 +221,6 @@
     <a class="scroll-to-top rounded" href="page-top">
         <i class="fa fa-angle-up"></i>
     </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">@lang('master.admin.ask_logout')</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">@lang('master.admin.message_logout')</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">@lang('master.admin.cancel')</button>
-                    <a class="btn btn-primary" href="login.html">@lang('master.logout')</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="{{ mix('vendor/admin.js')}}"></script>
 </body>

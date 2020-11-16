@@ -19,6 +19,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
       'resources/assets/css/animate.css',
       'resources/assets/css/prettyPhoto.css',
       'resources/assets/css/price-range.css',
+      'resources/assets/css/mycss.css',
    ], 'public/css/all.css')
    .styles('resources/assets/css/font-awesome.min.css', 'public/css/font-awe.css')
    .styles('resources/assets/css/sb-admin-2.css', 'public/css/admin.css')

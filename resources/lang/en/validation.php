@@ -12,7 +12,17 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
+    'attribute' => [
+        'username' => 'Username',
+        'email' => 'Email',
+        'password' => 'Password',
+        're_password' => 'Password Confirm',
+        'fullname' => 'Full Name',
+        'birthday' => 'Day of Birth',
+        'phone' => 'Phone Number',
+        'facebook' => 'Facebook',
+        'avatar' => 'Avatar',
+    ],
     'accepted'  => 'The :attribute must be accepted.',
     'active_url'  => 'The :attribute is not a valid URL.',
     'after'  => 'The :attribute must be a date after :date.',
