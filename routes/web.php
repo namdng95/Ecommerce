@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('change-locale/{lang}', function ($lang){
+    Session::put('language', $lang);
+    return redirect()->back();
+})->name('change.locale');
+
+Route::get('/', 'HomeController@index')->name('home');
+
