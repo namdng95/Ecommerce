@@ -48,7 +48,12 @@ Route::group([
     Route::get('login', 'LoginController@showLogin')->name('login');
     Route::post('post/login', 'LoginController@login')->name('post.login');
     Route::get('register', 'LoginController@showRegister')->name('register');
-    Route::resource('users', 'ProfileController');
+    Route::resources([
+        'users' => 'ProfileController',
+        'cart' => 'CartController'
+    ]);
+    Route::post('cart/update', 'CartController@updateAllCart')->name('cart.update.all');
+    Route::get('cart/delete/{rowId}', 'CartController@delete')->name('cart.delete');
 
     Route::group([
         'middleware' => 'auth',

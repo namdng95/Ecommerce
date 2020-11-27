@@ -59,7 +59,7 @@
                         <div class="">
                             <span class="pull-right">
                                 <button class="btn btn-sm btn-warning" type="button">
-                                    <a href="{{ route('users.edit', $user->user_id) }}">
+                                    <a class="text-white" href="{{ route('users.edit', $user->user_id) }}">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 </button>

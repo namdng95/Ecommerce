@@ -1,6 +1,17 @@
 <?php
 
 return [
+    'back' => 'Back',
+    'shopping_cart' => [
+        'update' => 'Update Cart',
+        'tax' => 'Eco Tax',
+        'shopping' => 'Shopping Cart',
+        'image' => 'Image',
+        'name' => 'Name Product',
+        'price' => 'Price',
+        'qty' => 'Quantity',
+        'total' => 'Total',
+    ],
     'products' => [
         'id' => 'Product ID',
     ],

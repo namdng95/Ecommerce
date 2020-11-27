@@ -58,6 +58,7 @@
                         </div>
                         <div class="col-sm-7">
                             <div class="product-information">
+                                {{ csrf_field() }}
                                 <!--/product-information-->
                                 <input type="hidden" class="cart_product_id_{{ $product->product_id }}"
                                     value="{{ $product->product_id }}">
@@ -75,13 +76,12 @@
                                 <h4>{{ $product->product_name }}</h4>
                                 <p>@lang('master.products.id'): {{ $product->product_id }}</p>
                                 
-                                
                                 <span>
                                     <span>{{ number_format($product->product_price) }} @lang('master.currency.usd')</span>
                                     <label>Quantity:</label>
-                                    <input name="qty" type="number" value="1" />
+                                    <input name="cart_product_qty_{{ $product->product_id }}" type="number" value="1" />
 
-                                    <button type="button" data-id="{{ $product->product_id }}" class="btn btn-default cart add-to-cart">
+                                    <button  url="{{ route('cart.store') }}" data-url="{{ route('cart.index') }}" type="button" data-id="{{ $product->product_id }}" class="btn btn-default cart add-to-cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         @lang('master.add_to_cart.name')
                                     </button>

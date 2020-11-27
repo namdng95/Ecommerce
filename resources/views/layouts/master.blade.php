@@ -70,7 +70,11 @@
                         <div class="shop-menu clearfix pull-right">
                             <ul class="nav navbar-nav">
                                 <li><a href=""><i class="fa fa-crosshairs"></i>@lang('master.checkout')</a></li>
-                                <li><a href=""><i class="fa fa-shopping-cart"></i>@lang('master.cart')</a></li>
+                                <li>
+                                    <a href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i>
+                                        @lang('master.cart')(@if(Session::get('cart')) {{ count(Session::get('cart')) }} @endif)
+                                    </a>
+                                </li>
                             @if(Auth::check())
                                 <li><a href="{{ route('logout') }}"><i class="fa fa-lock"></i>@lang('master.logout')</a></li>
                             @else

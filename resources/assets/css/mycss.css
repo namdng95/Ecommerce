@@ -1,0 +1,17 @@
+.cart_img img{
+    width: 50%;
+}
+
+.fa-times{
+    margin-top: 10%;
+}
+
+.text-white{
+    color: white;
+    padding: 15px 40px;
+    font-size: 30px;
+}
+
+.style_cart{
+    width: 25%;
+}
