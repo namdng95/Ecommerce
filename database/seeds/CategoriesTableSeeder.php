@@ -16,7 +16,7 @@ class CategoriesTableSeeder extends Seeder
             [
                 'cate_name' => 'SPORTS WEAR',
                 'cate_slug' => 'sports-wear',
-                'parent_id' => null,
+                'parent_id' => 0,
                 'cate_status' => 1,
             ], [
                 'cate_name' => 'Nike',
@@ -31,7 +31,7 @@ class CategoriesTableSeeder extends Seeder
             ], [
                 'cate_name' => 'STREET WEAR',
                 'cate_slug' => 'street-wear',
-                'parent_id' => null,
+                'parent_id' => 0,
                 'cate_status' => 1,
             ], [
                 'cate_name' => 'MNML',
@@ -46,7 +46,7 @@ class CategoriesTableSeeder extends Seeder
             ], [
                 'cate_name' => 'LUXURY CLOTHING',
                 'cate_slug' => 'luxury-clothing',
-                'parent_id' => null,
+                'parent_id' => 0,
                 'cate_status' => 1,
             ], [
                 'cate_name' => 'Gucci',

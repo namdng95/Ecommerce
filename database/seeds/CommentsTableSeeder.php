@@ -15,8 +15,9 @@ class CommentsTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         for ($i = 0; $i < 10; $i++) {
             Comment::create([
-                'user_id' => $faker->numberBetween($min = 0, $max = 10),
-                'product_id' => $faker->numberBetween($min = 0, $max = 10),
+                'comment_id' => 1 + $i,
+                'user_id' => $faker->numberBetween($min = 1, $max = 10),
+                'product_id' => $faker->numberBetween($min = 1, $max = 10),
                 'comment_content' => 'The fit is perfect . Length of course I will need to get it hemmed but all in all amazing jeans',
                 'comment_status' => $faker->numberBetween($min = 0, $max = 1),
             ]);

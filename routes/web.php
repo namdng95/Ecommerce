@@ -20,6 +20,7 @@ Route::group([
     'as' => 'admin.',
     'prefix' => 'admin',
 ], function(){
+    Route::get('/', 'LoginController@showLogin')->name('admin');
     Route::get('login', 'LoginController@showLogin')->name('login');
     Route::post('post/login', 'LoginController@login')->name('post.login');
 

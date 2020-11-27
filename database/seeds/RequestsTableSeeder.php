@@ -15,8 +15,9 @@ class RequestsTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         for ($i = 0; $i < 10; $i++) {
             Request::create([
-                'user_id' => $faker->numberBetween($min = 0, $max = 10),
-                'request_content' => 'Request cancellation of order #' . $faker->numberBetween($min = 0, $max = 10),
+                'request_id' => 1 + $i,
+                'user_id' => $faker->numberBetween($min = 1, $max = 10),
+                'request_content' => 'Request cancellation of order #' . $faker->numberBetween($min = 1, $max = 10),
                 'request_status' => $faker->numberBetween($min = 0, $max = 1),
             ]);
         }
