@@ -2,6 +2,21 @@
 
 return [
 
+    'pagination' => [
+        'three' => 3,
+        'six' => 6,
+    ],
+
+    'status' => [
+        'enable' => 1,
+        'disable' => 0,
+    ],
+
+    'order' => [
+        'latest' => 'desc',
+        'oldest' => 'asc',
+    ],
+
     'date_format' => 'd/m/Y',
 
     //gender

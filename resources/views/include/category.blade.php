@@ -1,27 +1,28 @@
 <div class="col-sm-3">
     <div class="left-sidebar">
         <h2>@lang('master.category')</h2>
+        <!--category-productsr-->
         <div class="panel-group category-products" id="accordian">
-            <!--category-productsr-->
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="accordian" href="">
-                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                            <!-- Cate name parent here -->
-                        </a>
-                    </h4>
-                </div>
-                <div id="sportswear" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <ul>
-                            <!-- Cate name children here -->
-                            <li><a href=""></a></li>
-                        </ul>
-                    </div>
-                </div>
+                @if(isset($categories) && !empty($categories))
+                    @foreach($categories as $cate)
+                        @if($cate->parent_id == null)
+                            <div class="panel-body">
+                                <b class="" data-toggle="collapse" data-target=".subCate{{ $cate->cate_id }}">
+                                    <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                    {{ $cate->cate_name }}
+                                </b>
+                                <ul class="subCate{{ $cate->cate_id }} collapse">
+                                    @foreach($cate->children as $subCate)
+                                        <li><a href="{{ route('categories.showCateBySlug', $subCate->cate_slug) }}">{{ $subCate->cate_name }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
             </div>
         </div>
-        <!--/category-products-->
     </div>
+    <!--/category-products-->
 </div>

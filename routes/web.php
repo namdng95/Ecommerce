@@ -15,6 +15,7 @@ Route::get('change-locale/{lang}', function ($lang){
     return redirect()->back();
 })->name('change.locale');
 
+
 Route::group([
     'namespace' => 'Admin',
     'as' => 'admin.',
@@ -29,6 +30,8 @@ Route::group([
     ], function(){
         Route::get('dashboard', 'AdminController@index')->name('dashboard');
         Route::get('logout', 'LoginController@logout')->name('logout');
+
+        Route::resource('categories', 'CategoryController');
     });
 });
 
@@ -37,6 +40,11 @@ Route::group([
     'middleware' => 'redirect', 
 ], function(){
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('show', 'HomeController@index')->name('home');
+
+    Route::get('categories/{cate_slug}', 'CategoryController@showCateBySlug')->name('categories.showCateBySlug');
+    Route::get('product-details/{product_slug}', 'ProductController@showProductDetails')->name('products.showProductDetails');
+    
     Route::get('login', 'LoginController@showLogin')->name('login');
     Route::post('post/login', 'LoginController@login')->name('post.login');
     Route::get('register', 'LoginController@showRegister')->name('register');
