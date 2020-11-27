@@ -1,7 +1,31 @@
 <?php
 
 return [
-
+    'label' => [
+        'username' => 'Tên người dùng',
+        'email' => 'Email',
+        'password' => 'Mật khẩu',
+        're_password' => 'Xác nhận mật khẩu',
+        'fullname' => 'Tên đầy đủ',
+        'phone' => 'Số điện thoại',
+        'gender' => 'Giới tính',
+        'birthday' => 'Ngày sinh',
+        'facebook' => 'Facebook',
+        'avatar' => 'Ảnh đại diện',
+    ],
+    'close' => 'Đóng',
+    'message' => [
+        'error_login' => 'Lỗi đăng nhập',
+        'success_login' => 'Đăng nhập thành công',
+        'error_signup' => 'Tạo tài khoản thất bại!',
+        'success_signup' => 'Tạo tài khoản thành công!',
+    ],
+    'gender' => [
+        'male' => 'Nam',
+        'female' => 'Nữ',
+        'other' => 'Khác',
+    ],
+    'or' => 'Hoặc',
     'home' => 'Trang chủ',
     'title' => 'Trang chủ | E-Shopper',
     'language' => [
@@ -12,6 +36,9 @@ return [
     'checkout' => 'Thanh toán',
     'cart' => 'Giỏ hàng',
     'login' => 'Đăng nhập',
+    'login_title' => 'Đăng nhập vào tài khoản của bạn',
+    'signup' => 'Đăng ký',
+    'signup_title' => 'Tạo tài khoản mới!',
     'logout' => 'Đăng xuất',
     'profile' => 'Hồ sơ',
     'product' => 'Sản phẩm',
@@ -49,9 +76,16 @@ return [
         'statistic' => 'Thống kê'
     ],
     'placeholder' => [
-        'email' => 'Nhập email...',
-        'password' => 'Nhập password...',
+        'email' => 'Nhập email',
+        'password' => 'Nhập mật khẩu',
+        're_password' => 'Nhập lại mật khẩu',
         'search' => 'Tìm kiếm...',
+        'username' => 'Tên người dùng',
+        'fullname' => 'Tên đầy đủ',
+        'birthday' => 'Ngày sinh',
+        'avatar' => 'Ảnh đại diện',
+        'phone' => 'Số điện thoại',
+        'facebook' => 'Facebook',
     ]
 
 ];

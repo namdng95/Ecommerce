@@ -1,7 +1,31 @@
 <?php
 
 return [
-
+    'label' => [
+        'username' => 'Username',
+        'email' => 'Email',
+        'password' => 'Password',
+        're_password' => 'Password Confirm',
+        'fullname' => 'Full Name',
+        'phone' => 'Phone Number',
+        'gender' => 'Gender',
+        'birthday' => 'Birthday',
+        'facebook' => 'Facebook',
+        'avatar' => 'Avatar',
+    ],
+    'close' => 'Close',
+    'message' => [
+        'error_login' => 'Email or Password invalid!',
+        'success_login' => 'Login Successfully!',
+        'error_signup' => 'Create Account Error! x.X',
+        'success_signup' => 'Create Account Successfully!',
+    ],
+    'gender' => [
+        'male' => 'Male',
+        'female' => 'Female',
+        'other' => 'Other',
+    ],
+    'or' => 'Or',
     'home' => 'Home',
     'title' => 'Home | E-Shopper',
     'language' => [
@@ -12,6 +36,9 @@ return [
     'checkout' => 'Checkout',
     'cart' => 'Cart',
     'login' => 'Login',
+    'login_title' => 'Login to your account',
+    'signup' => 'Signup',
+    'signup_title' => 'New User Signup!',
     'logout' => 'Logout',
     'profile' => 'Profile',
     'product' => 'Products',
@@ -49,9 +76,16 @@ return [
         'statistic' => 'Statistical'
     ],
     'placeholder' => [
-        'email' => 'Enter Email Address...',
+        'email' => 'Enter Email Address',
         'password' => 'Password',
         'search' => 'Search for...',
+        're_password' => 'Password Confirm',
+        'username' => 'Username',
+        'fullname' => 'Full Name',
+        'birthday' => 'Day of Birth',
+        'avatar' => 'Avatar',
+        'phone' => 'Phone',
+        'facebook' => 'Facebook',
     ]
 
 ];

@@ -34,11 +34,3 @@ jobs:
   - composer install
   after_script:
   - echo "Finish job"
-
-- name: test:phpunit
-  stage: test
-  image: sunasteriskrnd/php-workspace:7.4
-  before_script:
-  - composer install
-  script:
-  - php vendor/bin/phpunit

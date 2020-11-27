@@ -52,4 +52,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->role == config('app.admin_role');
+    }
+
+    public function isUser()
+    {
+        return $this->role == config('app.user_role');
+    }
 }
