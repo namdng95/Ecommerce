@@ -15,6 +15,7 @@ class AddColumnsToTheOrderTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
         Schema::table('orders', function (Blueprint $table) {
+            $table->string('order_status')->change();
             $table->unsignedBigInteger('shipping_id');
             $table->unsignedBigInteger('payment_id');
             $table->foreign('shipping_id')->references('shipping_id')->on('shipping')->after('user_id')->onUpdate('cascade')->onDelete('cascade');

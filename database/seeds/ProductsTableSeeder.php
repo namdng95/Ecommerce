@@ -24,6 +24,7 @@ class ProductsTableSeeder extends Seeder
                 'product_quantity' => $faker->numberBetween($min = 50, $max = 100),
                 'product_viewed' => $faker->numberBetween($min = 0, $max = 1000),
                 'product_status' => $faker->numberBetween($min = 0, $max = 1),
+                'product_img' => 'product1.png',
             ]);
         }
     }

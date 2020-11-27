@@ -1237,7 +1237,6 @@ $(document).ready(function() {
                 _token: _token,
             },
             success: function(response) {
-                console.log(response);
                 if (response.success) {
                     swal(
                         {

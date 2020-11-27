@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             User::create([
                 'user_id' => 1 + $i,
                 'username' => $faker->userName(),
-                'email' => $faker->email(),
+                'email' => $faker->randomElement(['admin', 'user']) . $i . '@gmail.com',
                 'password' => Hash::make('12345678'),
                 'fullname' => $faker->name(),
                 'birthday' => $faker->dateTime($max = 'now', $timezone = null),

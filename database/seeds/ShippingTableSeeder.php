@@ -18,6 +18,7 @@ class ShippingTableSeeder extends Seeder
                 'shipping_id' => 1 + $i,
                 'shipping_name' => $faker->email(),
                 'shipping_address' => '16 Ly Thuong Kiet, Quan Hai Chau, Tp. Da Nang',
+                'shipping_email' => 'customer' . $i . '@gmail.com',
                 'shipping_phone' => $faker->e164phoneNumber(),
                 'shipping_desc' => 'Please package carefully. Thank you so much!',
                 'shipping_status' => $faker->randomElement(['Online Payment', 'Cash', 'Shipping']),

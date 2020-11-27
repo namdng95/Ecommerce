@@ -20,7 +20,7 @@ class PaymentsTableSeeder extends Seeder
                 'payment_method' => $faker->randomElement(['Online Payment', 'Cash', 'Shipping']),
                 'payer_email' => $faker->email(),
                 'amount' => $faker->numberBetween($min = 10, $max = 100),
-                'amount' => $faker->randomElement(['USD', 'VND']),
+                'currency' => $faker->randomElement(['USD', 'VND']),
                 'payment_status' => $faker->randomElement(['succeeded', 'failed']),
             ]);
         }
