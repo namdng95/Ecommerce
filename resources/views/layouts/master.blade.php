@@ -76,7 +76,7 @@
                             @else
                                 <li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>@lang('master.login')</a></li>
                             @endif
-                                <li><a href=""><i class="fa fa-user"></i>@lang('master.profile')</a></li>
+                                <li><a href="{{ route('users.index') }}"><i class="fa fa-user"></i>@lang('master.profile')</a></li>
                             </ul>
                         </div>
                     </div>

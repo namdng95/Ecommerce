@@ -15,31 +15,35 @@ Route::get('change-locale/{lang}', function ($lang){
     return redirect()->back();
 })->name('change.locale');
 
-Route::get('/', 'HomeController@index')->name('home');
-
-Route::get('login', 'Web\LoginController@showLogin')->name('login');
-Route::post('post/login', 'Web\LoginController@login')->name('post.login');
-Route::get('register', 'Web\LoginController@showRegister')->name('register');
-
-Route::resource('users', 'Web\ProfileController');
-
-Route::get('admin/login', 'Admin\LoginController@showLogin')->name('admin.login');
-Route::post('admin/post/login', 'Admin\LoginController@login')->name('admin.post.login');
-
 Route::group([
     'namespace' => 'Admin',
     'as' => 'admin.',
     'prefix' => 'admin',
-    'middleware' => 'admin',
 ], function(){
-    Route::get('dashboard', 'AdminController@index')->name('dashboard');
-    Route::get('logout', 'LoginController@logout')->name('logout');
+    Route::get('login', 'LoginController@showLogin')->name('login');
+    Route::post('post/login', 'LoginController@login')->name('post.login');
+
+    Route::group([
+        'middleware' => 'admin',
+    ], function(){
+        Route::get('dashboard', 'AdminController@index')->name('dashboard');
+        Route::get('logout', 'LoginController@logout')->name('logout');
+    });
 });
 
 Route::group([
     'namespace' => 'Web',
-    'middleware' => 'auth',
+    'middleware' => 'redirect', 
 ], function(){
-    Route::get('logout', 'LoginController@logout')->name('logout');
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('login', 'LoginController@showLogin')->name('login');
+    Route::post('post/login', 'LoginController@login')->name('post.login');
+    Route::get('register', 'LoginController@showRegister')->name('register');
+    Route::resource('users', 'ProfileController');
 
+    Route::group([
+        'middleware' => 'auth',
+    ], function(){
+        Route::get('logout', 'LoginController@logout')->name('logout');
+    });
 });

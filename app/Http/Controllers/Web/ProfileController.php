@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EditUserRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Exception;
@@ -20,7 +21,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::check() ? Auth::user()->user_id : null;
+        $user_profile = User::where('user_id', $id)->get();
+
+        return view('web.profile.profile_user', compact('user_profile'));
     }
 
     /**
@@ -95,7 +99,9 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user_profile = User::where('user_id', $id)->get();
+
+        return view('web.profile.edit_profile', compact('user_profile'));
     }
 
     /**
@@ -105,9 +111,34 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditUserRequest $request, $id)
     {
-        //
+        $image_name = null;
+        try{
+            if ($request->hasFile('avatar')) {
+                $image = $request->file('avatar');
+                $image_name = time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = public_path('/images/upload');
+                $image->move($destinationPath, $image_name);
+            }
+            $user = User::find($id);
+            $user->fullname = $request->fullname;
+            $user->birthday = $request->birthday;
+            $user->phone = $request->phone;
+            $user->avatar = $image_name;
+            $user->gender = $request->gender;
+            $user->facebook = $request->facebook;
+            $user->save();
+        }
+        catch(Exception $ex)
+        {
+            $ex->getmessage();
+            Session::flash('error',  trans('master.message.error') . '<br/>' . $ex->getmessage());
+            return redirect()->back();
+        }
+        
+        Session::flash('success', trans('master.message.success'));
+        return redirect()->back();
     }
 
     /**

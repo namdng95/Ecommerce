@@ -14,6 +14,8 @@ class Rating extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
+        'user_id',
+        'product_id',
         'rate_value',
         'rate_status',
     ];

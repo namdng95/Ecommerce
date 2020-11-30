@@ -2,6 +2,15 @@
 
 return [
 
+    'date_format' => 'd/m/Y',
+
+    //gender
+    'gender' => [
+        'male' => 'Male',
+        'female' => 'Female',
+        'other' => 'Other'
+    ],
+
     'admin_role' => 1,
     'user_role' => 0,
 

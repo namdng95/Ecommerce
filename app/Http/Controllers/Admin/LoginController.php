@@ -17,7 +17,7 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request){
         $credentials = ['email' => $request->email, 'password' => $request->password];
-        $remember = $request->remember == 'on' ? true : false;
+        $remember = ($request->remember == 'on' || $request->remember == 1) ? true : false;
 
         if(!Auth::attempt($credentials, $remember)){
             Session::flash('error_login', trans('master.message.error_login'));

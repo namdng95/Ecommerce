@@ -14,6 +14,8 @@ class Comment extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
+        'user_id',
+        'product_id',
         'comment_content',
         'comment_status',
     ];
