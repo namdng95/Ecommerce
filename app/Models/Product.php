@@ -43,4 +43,33 @@ class Product extends Model
     {
         return $this->hasMany(Rating::class);
     }
+
+    public function scopeAvailable($query, $status)
+    {
+        return $query->where('product_status', $status);
+    }
+
+    public function scopeAvailableLatest($query, $status, $order)
+    {
+        return $query->where('product_status', $status)->orderBy('product_id', $order);
+    }
+
+    public function agvRate(){
+        return $this->ratings()
+                    ->selectRaw('avg(rate_value) as star, product_id')
+                    ->groupBy('product_id');
+    }
+
+    public function scopeProductBySlug($query, $slug, $status)
+    {
+        return $query->where([['product_slug', $slug],['product_status', $status]]);
+    }
+
+    public function scopeFindByCategorySlug($query, $cate_slug, $cate_status, $product_status)
+    {
+        return $query->where('product_status', $product_status)
+        ->whereHas('category',  function($query) use ($cate_slug, $cate_status){
+            $query->where([['cate_slug', $cate_slug], ['cate_status', $cate_status]]); });
+    }
+
 }

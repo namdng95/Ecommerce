@@ -1,6 +1,16 @@
 <?php
 
 return [
+    'product' => [
+        'id' => 'ID Sản phẩm',
+    ],
+    'currency' => [
+        'usd' => 'USD',
+        'vnd' => 'VND',
+    ],
+    'add_to_cart' => [
+        'name' => 'Thêm vào giỏ hàng',
+    ],
     'user' => [
         'info' => 'Thông tin người dùng',
         'id' => 'Id',

@@ -1,6 +1,16 @@
 <?php
 
 return [
+    'products' => [
+        'id' => 'Product ID',
+    ],
+    'currency' => [
+        'usd' => 'USD',
+        'vnd' => 'VND',
+    ],
+    'add_to_cart' => [
+        'name' => 'Add to cart',
+    ],
     'user' => [
         'info' => 'User Information',
         'id' => 'Id',
