@@ -1649,6 +1649,7 @@ h2.title {
     display: block;
     margin-right: -12px;
     overflow: hidden;
+    margin-top: 70%;
 }
 
 .cart_delete a {

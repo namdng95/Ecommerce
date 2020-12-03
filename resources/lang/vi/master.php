@@ -1,6 +1,17 @@
 <?php
 
 return [
+    'back' => 'Trở về',
+    'shopping_cart' => [
+        'update' => 'Cập nhật giỏ hàng',
+        'tax' => 'Thuế',
+        'shopping' => 'Giỏ hàng',
+        'image' => 'Ảnh',
+        'name' => 'Tên sản phẩm',
+        'price' => 'Giá sản phẩm',
+        'qty' => 'Số lượng',
+        'total' => 'Tổng tiền',
+    ],
     'product' => [
         'id' => 'ID Sản phẩm',
     ],

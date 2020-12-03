@@ -19,14 +19,17 @@ mix.js('resources/assets/js/app.js', 'public/js')
       'resources/assets/css/animate.css',
       'resources/assets/css/prettyPhoto.css',
       'resources/assets/css/price-range.css',
+      'resources/assets/css/sweetalert.css',
       'resources/assets/css/mycss.css',
    ], 'public/css/all.css')
    .styles('resources/assets/css/font-awesome.min.css', 'public/css/font-awe.css')
    .styles('resources/assets/css/sb-admin-2.css', 'public/css/admin.css')
    .copy('node_modules/font-awesome/fonts/*', 'public/fonts')
    .scripts([
+      'resources/assets/js/sweetalert.js',
       'resources/assets/js/jquery.js',
       'resources/assets/js/bootstrap.min.js',
+      'resources/assets/js/newJs.js',
       'resources/assets/js/main.js',
       'resources/assets/js/gmaps.js',
       'resources/assets/js/html5shiv.js',

@@ -47,7 +47,7 @@
                                                 <h4><b>{{ $product->product_name }}</b></h4>
                                                 <p>{{ $product->product_desc }}</p>
                                             </a>
-                                            <button data-id="{{ $product->product_id }}" type="button"
+                                            <button url="{{ route('cart.store') }}" data-url="{{ route('cart.index') }}" data-id="{{ $product->product_id }}" type="button"
                                                 class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>
                                                 @lang('master.add_to_cart.name')
                                             </button>
