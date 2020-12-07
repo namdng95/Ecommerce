@@ -11,7 +11,7 @@
                     @foreach($product_details as $product)
                         <div class="col-sm-5">
                             <div class="view-product">
-                            @if($product->product_img != null && file_exists(public_path().'/images/upload/'.$product->img))
+                            @if($product->product_img != null && file_exists(public_path().'/images/'.$product->img))
                                 <img src="/images/{{ $product->product_img }}" alt="" />
                                 <a href="/images/{{ $product->product_img }}" rel="prettyPhoto">
                                     <h3><i class="fa fa-search" aria-hidden="true"></i></h3>
@@ -79,7 +79,7 @@
                                 <span>
                                     <span>{{ number_format($product->product_price) }} @lang('master.currency.usd')</span>
                                     <label>Quantity:</label>
-                                    <input name="cart_product_qty_{{ $product->product_id }}" type="number" value="1" />
+                                    <input class="cart_product_qty_{{ $product->product_id }}" type="number" value="1" />
 
                                     <button  url="{{ route('cart.store') }}" data-url="{{ route('cart.index') }}" type="button" data-id="{{ $product->product_id }}" class="btn btn-default cart add-to-cart">
                                         <i class="fa fa-shopping-cart"></i>
