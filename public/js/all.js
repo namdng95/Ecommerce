@@ -1252,8 +1252,12 @@ $(document).ready(function() {
                         function() {
                             window.location.href = show_cart_url;
                         }
-                    );
+                    );  
                 }
+                $(".cart-total").html(function() {
+                    var total = parseInt($(this).html());
+                    return ++total;
+                });
             },
         });
     });

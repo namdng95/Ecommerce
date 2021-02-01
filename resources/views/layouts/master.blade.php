@@ -72,7 +72,7 @@
                                 <li><a href=""><i class="fa fa-crosshairs"></i>@lang('master.checkout')</a></li>
                                 <li>
                                     <a href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i>
-                                        @lang('master.cart')(@if(Session::get('cart')) {{ count(Session::get('cart')) }} @endif)
+                                        @lang('master.cart')(<span class="cart-total">0</span>)
                                     </a>
                                 </li>
                             @if(Auth::check())
